@@ -31,10 +31,8 @@ chrome.action.onClicked.addListener(async (tab) => {
         files: ["open_dyslexic.css"],
         target: { tabId: tab.id },
       });
-      await chrome.scripting.removeCSS({
-        files: ["open_dyslexic.css"],
-        target: { tabId: tab.id },
-      });
+      chrome.tabs.reload();
+
     }
 });
 
