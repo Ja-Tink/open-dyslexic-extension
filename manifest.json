@@ -18,6 +18,14 @@
       "128": "icons/icon-128.png"
       }
     },
+    "commands": {
+    "_execute_action": {
+      "suggested_key": {
+        "default": "Ctrl+B",
+        "mac": "Command+B"
+      }
+    }
+    },
 
     "background": {
       "service_worker": "background.js"
