@@ -1,0 +1,33 @@
+{
+    "manifest_version": 3,
+    "name": "Open Dyslexic",
+    "description": "Converts text on webpage to dyslexic-friendly font",
+    "version": "1.0",
+
+    "background": {
+      "service_worker": "background.js"
+      },
+   
+    "permissions" : ["activeTab", "storage", "scripting"],
+
+    "host_permissions": [
+      "http://*/*",
+      "https://*/*"
+    ],
+
+    "action": {
+      "default_icon": {
+        "48": "icons/placeholder-icon.png"
+      }
+      },
+    "content_scripts": [
+      {
+        "matches": ["<all_urls>"],
+        "css": ["open_dyslexic.css"],
+        "js": ["reset.js"]
+      }
+    ]
+
+
+
+}
