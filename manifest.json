@@ -29,7 +29,14 @@
 
     "background": {
       "service_worker": "background.js"
-      },
+    },
+    "content_scripts": [
+      {
+        "matches": ["<all_urls>"],
+        "js": ["detectCacheLoad.js"],
+        "run_at": "document_start"
+      }
+    ],
 
     "permissions" : ["activeTab", "storage", "scripting"],
     "host_permissions": [
