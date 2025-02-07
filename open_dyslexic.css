@@ -1,26 +1,26 @@
 @font-face {
     font-family: "OpenDyslexic";
-    src: url("open_dyslexic/compiled/OpenDyslexic-Regular.woff2") format("woff2"),
-         url("open_dyslexic/compiled/OpenDyslexic-Regular.woff") format("woff"),
-         url("open_dyslexic/compiled/OpenDyslexic-Regular.otf") format("otf");
+    src: url("static/open_dyslexic/compiled/OpenDyslexic-Regular.woff2") format("woff2"),
+         url("static/open_dyslexic/compiled/OpenDyslexic-Regular.woff") format("woff"),
+         url("static/open_dyslexic/compiled/OpenDyslexic-Regular.otf") format("otf");
     font-weight: 400;
     font-style: normal;
 
-    src: url("open_dyslexic/compiled/OpenDyslexic-Bold.woff2") format("woff2"),
-         url("open_dyslexic/compiled/OpenDyslexic-Bold.woff") format("woff"),
-         url("open_dyslexic/compiled/OpenDyslexic-Bold.otf") format("otf");
+    src: url("static/open_dyslexic/compiled/OpenDyslexic-Bold.woff2") format("woff2"),
+         url("static/open_dyslexic/compiled/OpenDyslexic-Bold.woff") format("woff"),
+         url("static/open_dyslexic/compiled/OpenDyslexic-Bold.otf") format("otf");
     font-weight: 700;
     font-style: normal;
     
-    src: url("open_dyslexic/compiled/OpenDyslexic-Italic.woff2") format("woff2"),
-         url("open_dyslexic/compiled/OpenDyslexic-Italic.woff") format("woff"),
-         url("open_dyslexic/compiled/OpenDyslexic-Italic.otf") format("otf");
+    src: url("static/open_dyslexic/compiled/OpenDyslexic-Italic.woff2") format("woff2"),
+         url("static/open_dyslexic/compiled/OpenDyslexic-Italic.woff") format("woff"),
+         url("static/open_dyslexic/compiled/OpenDyslexic-Italic.otf") format("otf");
     font-weight: 400;
     font-style: italic;
 
-    src: url("open_dyslexic/compiled/OpenDyslexic-Bold-Italic.woff2") format("woff2"),
-         url("open_dyslexic/compiled/OpenDyslexic-Bold-Italic.woff") format("woff"),
-         url("open_dyslexic/compiled/OpenDyslexic-Bold-Italic.otf") format("otf");
+    src: url("static/open_dyslexic/compiled/OpenDyslexic-Bold-Italic.woff2") format("woff2"),
+         url("static/open_dyslexic/compiled/OpenDyslexic-Bold-Italic.woff") format("woff"),
+         url("static/open_dyslexic/compiled/OpenDyslexic-Bold-Italic.otf") format("otf");
     font-weight: 700;
     font-style: italic;
 

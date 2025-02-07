@@ -27,13 +27,15 @@
     }
     },
 
+    "options_page": "static/options.html",
+
     "background": {
-      "service_worker": "background.js"
+      "service_worker": "src/background.js"
     },
     "content_scripts": [
       {
         "matches": ["<all_urls>"],
-        "js": ["detectCacheLoad.js"],
+        "js": ["src/detectCacheLoad.js"],
         "run_at": "document_start"
       }
     ],
