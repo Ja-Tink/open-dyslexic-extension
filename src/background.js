@@ -7,10 +7,10 @@ chrome.runtime.onInstalled.addListener(() => {
 
   });
 
-chrome.action.onClicked.addListener(async (tab) => {
+async function fontSwap(sent_tabId, sent_url) {
     //get id of current tab and current url
-    const tabId = tab.id
-    const url = tab.url
+    const tabId = sent_tabId
+    const url = sent_url
     const storageKey = `tab-${tabId}-url-${url}`;
     //access the current state of tab
     const result = await chrome.storage.local.get(storageKey);
@@ -33,7 +33,7 @@ chrome.action.onClicked.addListener(async (tab) => {
       console.log("Inserting CSS");
       await chrome.scripting.insertCSS({
         files: ["open_dyslexic.css"],
-        target: { tabId: tab.id },
+        target: { tabId: tabId },
       });
       //set remembered state to nextState
       await chrome.storage.local.set({ [storageKey]: nextState });
@@ -42,22 +42,19 @@ chrome.action.onClicked.addListener(async (tab) => {
       console.log("Removing CSS");
       await chrome.scripting.removeCSS({
         files: ["open_dyslexic.css"],
-        target: { tabId: tab.id },
+        target: { tabId: tabId },
       });
       //reload and set remembered state to nextState
       await chrome.storage.local.set({ [storageKey]: nextState });
       chrome.tabs.reload();
     }
-});
+};
 
 
-//TODO: figure out how to manage reloads for memory mode. Forget mode seems
-//to work. memoryMode is always on...
-
-chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
+async function cacheLoad(message, sender){
   //get id of current tab and current url
   const tabId = sender.tab.id
-  const url = sender.tab.url
+  const url = sender.url
   const storageKey = `tab-${tabId}-url-${url}`;
 
   chrome.storage.local.get("memoryMode", (memoryMode) => {
@@ -101,5 +98,16 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
 
     }
   });
+
+}
+
+//listen for flip message or load message
+chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
+  if (message.action === "flip") {
+    fontSwap(message.tabId, message.url);
+  }
+  else{
+    cacheLoad(message, sender);
+  }
 });
 
