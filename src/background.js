@@ -32,7 +32,7 @@ async function fontSwap(sent_tabId, sent_url) {
       // Insert the CSS file when the user turns the extension on
       console.log("Inserting CSS");
       await chrome.scripting.insertCSS({
-        files: ["open_dyslexic.css"],
+        files: ["static/open_dyslexic.css"],
         target: { tabId: tabId },
       });
       //set remembered state to nextState
@@ -41,7 +41,7 @@ async function fontSwap(sent_tabId, sent_url) {
       // Remove the CSS file when the user turns the extension off
       console.log("Removing CSS");
       await chrome.scripting.removeCSS({
-        files: ["open_dyslexic.css"],
+        files: ["static/open_dyslexic.css"],
         target: { tabId: tabId },
       });
       //reload and set remembered state to nextState
@@ -76,13 +76,13 @@ async function cacheLoad(message, sender){
           if (prevState === true) {
             console.log("Page was previously loaded with font. Reinstering CSS.");
             chrome.scripting.insertCSS({
-              files: ["open_dyslexic.css"],
+              files: ["static/open_dyslexic.css"],
               target: { tabId: sender.tab.id },
             });
           } else{
             console.log("Page was previously loaded without font. Removing CSS.");
             chrome.scripting.removeCSS({
-              files: ["open_dyslexic.css"],
+              files: ["static/open_dyslexic.css"],
               target: { tabId: sender.tab.id },
             });
           }
@@ -91,7 +91,7 @@ async function cacheLoad(message, sender){
     } else{ //memoryMode is set to FORGET
       //remove CSS (if it exists)
       chrome.scripting.removeCSS({
-        files: ["open_dyslexic.css"],
+        files: ["static/open_dyslexic.css"],
         target: { tabId: sender.tab.id }});
       //set this tab's state to off
       chrome.storage.local.set({ [storageKey]: false });

@@ -1,0 +1,35 @@
+@font-face {
+    font-family: "OpenDyslexic";
+    src: url("open_dyslexic/compiled/OpenDyslexic-Regular.woff2") format("woff2"),
+         url("open_dyslexic/compiled/OpenDyslexic-Regular.woff") format("woff"),
+         url("open_dyslexic/compiled/OpenDyslexic-Regular.otf") format("otf");
+    font-weight: 400;
+    font-style: normal;
+
+    src: url("open_dyslexic/compiled/OpenDyslexic-Bold.woff2") format("woff2"),
+         url("open_dyslexic/compiled/OpenDyslexic-Bold.woff") format("woff"),
+         url("open_dyslexic/compiled/OpenDyslexic-Bold.otf") format("otf");
+    font-weight: 700;
+    font-style: normal;
+    
+    src: url("open_dyslexic/compiled/OpenDyslexic-Italic.woff2") format("woff2"),
+         url("open_dyslexic/compiled/OpenDyslexic-Italic.woff") format("woff"),
+         url("open_dyslexic/compiled/OpenDyslexic-Italic.otf") format("otf");
+    font-weight: 400;
+    font-style: italic;
+
+    src: url("open_dyslexic/compiled/OpenDyslexic-Bold-Italic.woff2") format("woff2"),
+         url("open_dyslexic/compiled/OpenDyslexic-Bold-Italic.woff") format("woff"),
+         url("open_dyslexic/compiled/OpenDyslexic-Bold-Italic.otf") format("otf");
+    font-weight: 700;
+    font-style: italic;
+}
+
+:root {
+     --font-size-var: 0.92em;
+}
+
+body, p, h1, h2, h3, h4, h5, h6, div{
+    font-family: "OpenDyslexic", sans-serif !important;
+    font-size: var(--font-size-var);
+}
